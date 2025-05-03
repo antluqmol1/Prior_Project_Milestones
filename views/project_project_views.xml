@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="project_view_form_inherited_milestones" model="ir.ui.view">
+        <field name="name">project.project.form.inherited.milestones</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/> <!-- Hereda de la vista form base de project -->
+        <field name="arch" type="xml">
+            <!-- Añadir una nueva pestaña dentro del notebook existente -->
+            <xpath expr="//notebook" position="inside">
+                <page string="Hitos del Proyecto" name="milestones">
+                    <field name="milestone_ids" mode="list">
+                        <!-- Vista de árbol eliminada. Odoo usará la vista list por defecto 
+                             de estate.milestone (view_estate_milestone_list) -->
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo> 

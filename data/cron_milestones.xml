@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1"> <!-- noupdate="1" para que no se sobrescriba en actualizaciones -->
+
+        <record id="ir_cron_send_overdue_milestone_reminders" model="ir.cron">
+            <field name="name">Prior Milestones: Enviar Recordatorios de Hitos Atrasados</field>
+            <field name="model_id" ref="model_estate_milestone"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_send_overdue_milestone_reminders()</field>
+            <field name="user_id" ref="base.user_root"/> <!-- Ejecutar como admin -->
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <!-- <field name="numbercall">-1</field> --> <!-- Campo eliminado en Odoo 17+ -->
+            <!-- <field name="doall">False</field> --> <!-- Campo eliminado en Odoo 17+ -->
+            <!-- Cuidado con la evaluación de la hora, necesita importar DateTime -->
+            <field name="nextcall" eval="(DateTime.now().replace(hour=8, minute=0, second=0)).strftime('%Y-%m-%d %H:%M:%S')" /> <!-- Próxima ejecución mañana a las 8:00 -->
+            <field name="active">True</field> <!-- Activado por defecto -->
+        </record>
+
+    </data>
+</odoo> 

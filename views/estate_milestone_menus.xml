@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- 
+            Menú Item para Hitos de Proyecto.
+            Se mostrará dentro de la aplicación estándar de Proyectos.
+            Asegúrate de que el módulo 'project' está instalado.
+        -->
+        
+        <!-- Menú Item para Hitos -->
+        <menuitem 
+            id="menu_estate_milestone" 
+            name="Hitos de Proyecto"
+            parent="project.menu_main_pm"
+            action="action_estate_milestone" 
+            sequence="15"/>
+            
+        <!-- El submenú de configuración probablemente iría bajo project.menu_project_config -->
+        <!-- 
+        <menuitem 
+            id="menu_estate_milestone_config" 
+            name="Configuración Hitos" 
+            parent="project.menu_project_config" 
+            sequence="10"/> 
+        -->
+
+    </data>
+</odoo> 
