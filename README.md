@@ -76,12 +76,10 @@ hitos-proyecto/
 
 ## Próximos Pasos y Consideraciones
 
-1.  **Verificar Dependencias:** Asegúrate de que los módulos `project` y `mail` de Odoo estén instalados.
-2.  **Consistencia Vista Tarea (Opcional):** Considerar corregir `milestone_id` a `estate_milestone_id` en `views/project_task_views.xml` para mayor claridad, aunque funcionalmente Odoo suele resolverlo.
-3.  **Refinar Permisos (Opcional):** Ajustar los permisos en `security/ir.model.access.csv` si se necesita una granularidad mayor que `base.group_user`.
-4.  **Mejorar Vista Kanban (Opcional):** Añadir más información o acciones rápidas.
-5.  **Implementar Pruebas del Cron (Opcional):** Usar `unittest.mock` para simular `message_post` y verificar que el cron funciona como se espera.
-6.  **Despliegue:**
+1.  **Refinar Permisos (Opcional):** Ajustar los permisos en `security/ir.model.access.csv` si se necesita una granularidad mayor que `base.group_user`.
+2.  **Mejorar Vista Kanban (Opcional):** Añadir más información o acciones rápidas.
+3.  **Implementar Pruebas del Cron (Opcional):** Usar `unittest.mock` para simular `message_post` y verificar que el cron funciona como se espera.
+4.  **Despliegue:**
     *   Debemos asegurarnos de que la carpeta `custom-addons` esté incluida en el `addons_path` de tu configuración de Odoo.
     *   Reiniciar el servidor Odoo.
     *   Ir a Aplicaciones, actualizar la lista de aplicaciones e instalar/actualizar el módulo "Project" y "Prior Project Milestones".
